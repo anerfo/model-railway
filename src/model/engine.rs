@@ -11,8 +11,8 @@ pub struct Engine {
 }
 
 impl Engine {
-    pub fn new(address: u8, site: &'a dyn IClient>) -> Self {
-        Engine { asset: model::Asset::new(address, site), speed: 0, function: [false; 16] }
+    pub fn new(address: u8) -> Self {
+        Engine { asset: model::Asset::new(address), speed: 0, function: [false; 16] }
     }
 
     pub fn get_address(&self) -> u8 {

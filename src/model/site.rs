@@ -15,8 +15,8 @@ pub struct Site<const ENGINE_COUNT: usize, const SWITCH_COUNT: usize, const STAT
 impl<const ENGINE_COUNT: usize, const SWITCH_COUNT: usize, const STATUS_COUNT: usize> Site<ENGINE_COUNT, SWITCH_COUNT, STATUS_COUNT> {
     pub fn new(communication: Box<dyn crate::interface::ICommunication>) -> Self {
         Site {
-            engine: core::array::from_fn(|i| model::Engine::new(i as u8, &self)),
-            switch: core::array::from_fn(|i| model::Switch::new(i as u8, &self)),
+            engine: core::array::from_fn(|i| model::Engine::new(i as u8)),
+            switch: core::array::from_fn(|i| model::Switch::new(i as u8)),
             status: core::array::from_fn(|i| model::Status::new(i as u8)),
             communication,
             clients: Vec::new(),
